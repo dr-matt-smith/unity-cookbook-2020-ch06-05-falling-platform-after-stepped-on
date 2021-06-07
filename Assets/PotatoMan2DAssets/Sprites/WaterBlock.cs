@@ -3,6 +3,8 @@ using System.Collections;
 
 public class WaterBlock : MonoBehaviour
 {
+    const string TAG_PLAYER = "Player";
+    const string ANIMATION_TRIGGER_FALL = "Fall";
     private Animator animatorController;
 
     void Start()
@@ -12,9 +14,9 @@ public class WaterBlock : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D hit)
     {
-        if (hit.CompareTag("Player"))
+        if (hit.CompareTag(TAG_PLAYER))
         {
-            animatorController.SetTrigger("Fall");
+            animatorController.SetTrigger(ANIMATION_TRIGGER_FALL);
         }
     }
 }
